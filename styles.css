@@ -125,3 +125,37 @@ details p { padding: 0 14px 13px; margin: 0 !important; font-size: .87rem; }
   .site-footer { flex-direction: column; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+
+.credit-figure {
+  margin: 20px 0 26px;
+  overflow: hidden;
+  border: 1px solid rgba(196, 181, 253, 0.2);
+  border-radius: 14px;
+  background: rgba(12, 8, 22, 0.65);
+}
+
+.credit-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+  object-fit: contain;
+  background: #19191d;
+}
+
+.credit-figure figcaption {
+  display: grid;
+  gap: 3px;
+  padding: 12px 15px;
+  border-top: 1px solid rgba(196, 181, 253, 0.15);
+}
+
+.credit-figure figcaption strong {
+  color: #eee6fb;
+  font-size: 0.86rem;
+}
+
+.credit-figure figcaption span {
+  color: #a99bbc;
+  font-size: 0.78rem;
+}
