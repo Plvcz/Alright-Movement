@@ -9,3 +9,5 @@ welcome to alright movement brah
 - Some parts of Alright Movement was written by AI like Follow Feature, Theme Feature, Nulls feature, and Exporting.
 - And alot of parts was modified by AI as again. A plugin for myself and my friends. it wasnt made for the public.
 - Any bugs you encounter and any issues don't go to me.
+
+https://plvcz.github.io/Alright-Movement/
