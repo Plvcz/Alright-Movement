@@ -39,6 +39,7 @@
       <nav id="doc-nav">
         <a class="nav-link active" href="#getting-started">Getting started</a>
         <a class="nav-link" href="#interface">The interface</a>
+        <a class="nav-link" href="#hotkeys">Hotkeys</a>
         <a class="nav-link" href="#keyframes">Keyframes & easing</a>
         <a class="nav-link" href="#playback">Playback & preview</a>
         <a class="nav-link" href="#onion-skin">Onion skin</a>
@@ -54,9 +55,9 @@
     </aside>
 
     <article class="docs">
-      <section class="intro-card" id="getting-started" data-search="lets larp it">
+      <section class="intro-card" id="getting-started" data-search="lets larp it overview">
         <div class="intro-tag"><span class="sparkle">✦</span> information</div>
-        <h2>Make every frame count.</h2>
+        <h2>Larp everything.</h2>
         <p>This plugin was just made for fun and supposed to be GATEKEEPED.</p>
         <div class="quick-stats">
           <div><span class="stat-icon">◈</span><span><strong>Keyframe-based</strong><small>Shape motion over time</small></span></div>
@@ -68,46 +69,124 @@
       <section class="doc-section" id="interface" data-search="interface editor timeline tracks controls workspace">
         <div class="section-kicker">01 / BASICS</div>
         <h2>The interface</h2>
-        <p>The editor brings the animation timeline and its editing controls into one workspace. The timeline is where you organize tracks, place keyframes, and review how values change over time.</p>
-        <div class="callout"><span class="callout-icon">✦</span><p><strong>Tip</strong> Get comfortable with the timeline before building a long animation. A small, well-organized sequence is easier to revise.</p></div>
+        <p>The editor is one window with a top bar, three working panels and a status line. It floats by default; click <strong>Dock</strong> to dock it as a Studio widget (the button then reads <strong>Float</strong>).</p>
+        <div class="doc-table-wrap"><table class="doc-table">
+          <thead><tr><th>Area</th><th>Where</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td>Top bar</td><td>Across the top</td><td>Use Selection, Refresh, + Key, Live Recording, Play, Exit / Projects, Save, Export, Looped, and the current frame label.</td></tr>
+            <tr><td>EXPLORER</td><td>Left</td><td>Lists the GUI objects in your project. Click one to make it the target.</td></tr>
+            <tr><td>PREVIEW / EDIT</td><td>Center, top</td><td>Shows your GUI at the chosen resolution, with handles for moving, resizing and rotating the selected object.</td></tr>
+            <tr><td>TIMELINE</td><td>Center, bottom</td><td>Frame ruler, one track per animated property, keyframes, audio clips and event markers.</td></tr>
+            <tr><td>PROPERTIES</td><td>Right</td><td>Properties of the selected object. Click a row to choose the property to animate; type a value to change it.</td></tr>
+            <tr><td>Status line</td><td>Bottom</td><td>Short messages explaining what just happened, or why something was refused.</td></tr>
+          </tbody>
+        </table></div>
+        <h3>Top bar buttons</h3>
+        <div class="doc-table-wrap"><table class="doc-table">
+          <thead><tr><th>Button</th><th>Use it to</th></tr></thead>
+          <tbody>
+            <tr><td>Use Selection</td><td>Load the ScreenGui (or an object inside it) you selected in Studio as the animation source.</td></tr>
+            <tr><td>Refresh</td><td>Re-read the GUI from Studio after you changed it outside the plugin.</td></tr>
+            <tr><td>+ Key</td><td>Add or update a keyframe for the selected property at the playhead.</td></tr>
+            <tr><td>Live Recording</td><td>Turn on to create keyframes automatically as you edit the selected property.</td></tr>
+            <tr><td>Play / Stop</td><td>Preview the animation. Pressing it again stops and resets the preview.</td></tr>
+            <tr><td>Exit / Projects</td><td>Go back to the project browser.</td></tr>
+            <tr><td>Save</td><td>Save the project inside your ScreenGui.</td></tr>
+            <tr><td>Export</td><td>Generate a ModuleScript you can use in your game.</td></tr>
+            <tr><td>Looped</td><td>Switch the animation between looping and playing once.</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section class="doc-section" id="hotkeys" data-search="hotkeys keyboard shortcuts space shift h j plus equals keyframes delete backspace ctrl shift escape undo redo easing onion skin">
+        <div class="section-kicker">02 / KEYBOARD</div>
+        <h2>Hotkeys</h2>
+        <p>because clicking everything manually is kinda cringe. These are the shortcuts from the guide:</p>
+        <div class="doc-table-wrap"><table class="doc-table hotkey-table">
+          <thead><tr><th>Shortcut</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td><kbd>Space</kbd></td><td>Play the preview, or stop and reset it.</td></tr>
+            <tr><td><kbd>Shift</kbd> + <kbd>H</kbd></td><td>Hide or show the whole editor. Space still plays/stops while it is hidden.</td></tr>
+            <tr><td><kbd>J</kbd></td><td>Step the playhead back one frame.</td></tr>
+            <tr><td><kbd>+</kbd> / <kbd>=</kbd></td><td>Add or update a keyframe for the selected property at the playhead.</td></tr>
+            <tr><td><kbd>Ctrl</kbd> + click</td><td>Add or remove keyframes from the current selection.</td></tr>
+            <tr><td><kbd>Shift</kbd> + click</td><td>Select a range of keyframes on the same track.</td></tr>
+            <tr><td><kbd>Shift</kbd> + <kbd>A</kbd></td><td>Select every keyframe.</td></tr>
+            <tr><td><kbd>Esc</kbd></td><td>Clear the current keyframe selection.</td></tr>
+            <tr><td><kbd>X</kbd>, <kbd>Delete</kbd> or <kbd>Backspace</kbd></td><td>Delete the selected keyframes.</td></tr>
+            <tr><td><kbd>Shift</kbd> + <kbd>B</kbd></td><td>Copy the selected keyframes.</td></tr>
+            <tr><td><kbd>Shift</kbd> + <kbd>V</kbd></td><td>Paste copied keyframes at the playhead.</td></tr>
+            <tr><td><kbd>Shift</kbd> + <kbd>Z</kbd></td><td>Undo.</td></tr>
+            <tr><td><kbd>Shift</kbd> + <kbd>Y</kbd></td><td>Redo.</td></tr>
+            <tr><td><kbd>K</kbd></td><td>Jump the playhead to the next keyframe.</td></tr>
+            <tr><td><kbd>G</kbd></td><td>Reset the selected object's Position, Size and Rotation to the values of its previous keyframe. If it has none, the status line says there's nothing to reset.</td></tr>
+            <tr><td><kbd>7</kbd></td><td>Open the KEYFRAME EASING picker when a keyframe is selected.</td></tr>
+            <tr><td><kbd>B</kbd></td><td>Cycle onion skin modes: press once for Static, twice quickly from Static for Automatic, and again to turn it off.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="callout"><span class="callout-icon">✦</span><p><strong>Heads up:</strong> Some shortcuts depend on what is selected or whether the editor has focus. If a shortcut doesn't do anything, click back into the plugin and try again.</p></div>
       </section>
 
       <section class="doc-section" id="keyframes" data-search="keyframes easing interpolation tracks values position rotation size">
-        <div class="section-kicker">02 / EDITING</div>
+        <div class="section-kicker">03 / EDITING</div>
         <h2>Keyframes & easing</h2>
-        <p>Keyframes define values at specific points in the animation. The playback system evaluates the values between keyframes to create motion.</p>
-        <ul class="feature-list">
-          <li><span class="list-check">✓</span><span><strong>Place keyframes intentionally</strong><small>Use them where a value or movement should change.</small></span></li>
-          <li><span class="list-check">✓</span><span><strong>Review timing</strong><small>Spacing between keyframes affects the pace of the animation.</small></span></li>
-          <li><span class="list-check">✓</span><span><strong>Choose easing deliberately</strong><small>Easing changes how motion accelerates or decelerates between points.</small></span></li>
+        <h3>Adding keyframes</h3>
+        <p>A keyframe stores one property's value at one frame. The plugin blends between keyframes for you.</p>
+        <ol class="number-list">
+          <li>Select an object in EXPLORER and a property in PROPERTIES.</li>
+          <li>Move the playhead: click or drag in the timeline ruler, use the ◀ ▶ buttons, or press <kbd>J</kbd> to step back one frame.</li>
+          <li>Type a new value in the property row, or drag the object's handles in the preview.</li>
+          <li>Press <strong>+ Key</strong> (or <kbd>=</kbd>) to store the value at the playhead.</li>
+        </ol>
+        <p>Pressing <strong>+ Key</strong> on a frame that already has a key updates it instead of adding a second one. Each property keeps its own track, so you can key Position and Transparency on different frames.</p>
+        <p><strong>Live Recording</strong> skips step 4. Select an object and a property, turn Live Recording on, then change the value: a keyframe is created at the playhead each time. It watches only the one object and property you had selected when you turned it on. Scrubbing, playing and dragging keyframes never record.</p>
+        <h3>Selecting and editing keyframes</h3>
+        <ul>
+          <li>Click a keyframe to select it. <kbd>Ctrl</kbd>+click adds or removes keyframes from the selection. <kbd>Shift</kbd>+click selects the range on the same track.</li>
+          <li><kbd>Shift</kbd>+<kbd>A</kbd> selects every keyframe. <kbd>Esc</kbd> clears the selection.</li>
+          <li>Drag selected keyframes to move them in time.</li>
+          <li><kbd>X</kbd>, <kbd>Delete</kbd> or <kbd>Backspace</kbd> deletes the selected keyframes.</li>
+          <li><kbd>Shift</kbd>+<kbd>B</kbd> copies the selected keyframes; <kbd>Shift</kbd>+<kbd>V</kbd> pastes them at the playhead.</li>
+          <li><kbd>Shift</kbd>+<kbd>Z</kbd> undoes and <kbd>Shift</kbd>+<kbd>Y</kbd> redoes.</li>
+          <li><kbd>K</kbd> jumps the playhead to the next keyframe.</li>
+          <li><kbd>G</kbd> resets the selected object's Position, Size and Rotation to the values of its previous keyframe. If it has none, the status line says there is nothing to reset.</li>
         </ul>
+        <h3>Easing</h3>
+        <p>Easing controls how a value travels from one keyframe to the next. It is stored on the keyframe where the move <em>starts</em>.</p>
+        <ol class="number-list">
+          <li>Click a keyframe.</li>
+          <li>Press <kbd>7</kbd>. The KEYFRAME EASING picker opens.</li>
+          <li>Click a style and direction. The keyframe changes colour to match its easing.</li>
+        </ol>
+        <p>If nothing is selected, pressing <kbd>7</kbd> shows "Select a keyframe before choosing easing." You can also type a Style (such as Linear, Sine, Quad, Back, Bounce) and a Direction (In, Out, InOut) into the two boxes in the timeline toolbar. New keyframes use whatever those boxes say, and clicking a keyframe loads its values into them.</p>
       </section>
 
-      <section class="doc-section" id="playback" data-search="playback preview play pause stop loop duration fps frame rate">
-        <div class="section-kicker">03 / PREVIEW</div>
+      <section class="doc-section" id="playback" data-search="playback preview play pause stop loop duration fps frame rate fixed fit clone actual gui both">
+        <div class="section-kicker">04 / PREVIEW</div>
         <h2>Playback & preview</h2>
-        <p>Preview your animation regularly instead of waiting until the timeline is complete. Check the start, middle, and end of the sequence for unexpected jumps or timing issues.</p>
-        <div class="mini-grid">
-          <div class="mini-card"><span class="mini-icon">▶</span><h3>Play</h3><p>Review the motion in sequence.</p></div>
-          <div class="mini-card"><span class="mini-icon">Ⅱ</span><h3>Pause</h3><p>Inspect a specific moment.</p></div>
-          <div class="mini-card"><span class="mini-icon">↻</span><h3>Loop</h3><p>Check transitions across the loop boundary.</p></div>
-        </div>
-        <p class="muted-note">Playback controls and exact behavior may depend on the version of the plugin you are using.</p>
+        <p><kbd>Space</kbd> or <strong>Play</strong> starts the preview; press again to stop and reset it. Drag in the ruler to scrub through the animation instead.</p>
+        <p>The box next to the zoom buttons sets the animation length in frames (default 120 at 60 fps). Use <strong>−</strong> and <strong>+</strong> to zoom the timeline. <strong>Looped</strong> makes the animation repeat. The current frame is shown in the top bar.</p>
+        <ul>
+          <li><strong>Preview: Clone / Actual GUI / Both</strong> cycles what your edits and playback affect. <em>Clone</em> only touches a throwaway copy, so your real GUI stays untouched. <em>Actual GUI</em> edits the real objects in StarterGui. <em>Both</em> plays on the copy and the real GUI at once.</li>
+          <li><strong>Fixed / Fit</strong> switches the preview between a fixed pixel size and scaling to fit the panel.</li>
+          <li>The two boxes beside the preview sizing controls set the preview resolution (default 1920 × 1080, allowed range 1 to 16384).</li>
+        </ul>
+        <div class="callout warning"><span class="callout-icon">!</span><p><strong>Start in Clone mode.</strong> Switch to Actual GUI only when you want edits to change your real GUI.</p></div>
       </section>
 
       <section class="doc-section" id="onion-skin" data-search="onion skin previous next frames ghost pose alignment">
-        <div class="section-kicker">04 / PRECISION</div>
+        <div class="section-kicker">05 / PRECISION</div>
         <h2>Onion skin</h2>
-        <p>Onion skin helps you compare nearby poses by showing surrounding animation frames as visual references. Use it to judge spacing, direction, and consistency between poses.</p>
+        <p>Onion skin draws ghost copies of your GUI at earlier (blue) and later (orange) frames so you can judge motion without playing it.</p>
         <ul>
-          <li>Use nearby frames as a guide while adjusting a pose.</li>
-          <li>Look for uneven spacing or sudden changes in direction.</li>
-          <li>Turn it off when the extra visual information makes the current pose harder to read.</li>
+          <li>Press <kbd>B</kbd> once for <strong>Static</strong> (ghosts stay put).</li>
+          <li>Press <kbd>B</kbd> twice quickly from Static for <strong>Automatic</strong> (ghosts follow the playhead).</li>
+          <li>Press <kbd>B</kbd> again to turn it off.</li>
         </ul>
       </section>
 
       <section class="doc-section" id="audio" data-search="audio clips sound asset id local studio file sync timeline">
-        <div class="section-kicker">05 / SOUND</div>
+        <div class="section-kicker">06 / SOUND</div>
         <h2>Audio clips</h2>
         <p>Audio clips can play alongside an animation. Add a supported audio asset, place it at the intended point in the timeline, and preview the sequence to check synchronization.</p>
         <ol class="number-list">
@@ -119,7 +198,7 @@
       </section>
 
       <section class="doc-section" id="events" data-search="animation events markers handlers register callback trigger">
-        <div class="section-kicker">06 / TIMELINE ACTIONS</div>
+        <div class="section-kicker">07 / TIMELINE ACTIONS</div>
         <h2>Animation events</h2>
         <p>Animation events mark points in the timeline where runtime code can trigger a registered action.</p>
         <ol class="number-list">
@@ -132,7 +211,7 @@
       </section>
 
       <section class="doc-section" id="projects" data-search="save saving project storage duration frame rate fps loop tracks keyframes">
-        <div class="section-kicker">07 / PROJECTS</div>
+        <div class="section-kicker">08 / PROJECTS</div>
         <h2>Saving projects</h2>
         <p>Save regularly to preserve your work and make it easier to return to an earlier version.</p>
         <ul>
@@ -145,13 +224,13 @@
       </section>
 
       <section class="doc-section" id="export" data-search="export runtime Luau module Start Pause Resume Stop loop fade event handlers">
-        <div class="section-kicker">08 / RUNTIME</div>
+        <div class="section-kicker">09 / RUNTIME</div>
         <h2>Exporting an animation</h2>
-        <p>Exporting generates Luau code intended to play the animation outside the editor.</p>
+        <p>Exporting generates a ModuleScript you can use in your game. The exported module has its own setup requirements, so read the generated code before wiring it into your experience.</p>
         <ol class="number-list">
           <li>Review the timeline, keyframes, duration, frame rate, and loop settings.</li>
-          <li>Use the export controls to generate the runtime module or script.</li>
-          <li>Place the generated code in an appropriate location for your experience.</li>
+          <li>Click <strong>Export</strong> to generate the ModuleScript.</li>
+          <li>Place the generated module in an appropriate location for your experience.</li>
           <li>Read the generated module's setup instructions and exact method signatures.</li>
           <li>Test playback in a separate play session.</li>
         </ol>
@@ -161,65 +240,39 @@
             <span>Start playback</span><span>Pause / resume</span><span>Stop playback</span><span>Loop settings</span><span>Fade settings</span><span>Event handlers</span>
           </div>
         </div>
-        <div class="callout warning"><span class="callout-icon">!</span><p><strong>Do not guess method signatures.</strong> Use the generated module's actual API and initialization requirements. Keep editor-only code separate from runtime logic, and validate client input on the server whenever it affects authoritative gameplay state.</p></div>
+        <div class="callout warning"><span class="callout-icon">!</span><p><strong>Do not guess method signatures.</strong> Use the generated module's actual API and initialization requirements. Keep editor-only code separate from runtime logic.</p></div>
       </section>
 
-      <section class="doc-section" id="themes" data-search="theme customize accent background panel separator window top image">
-        <div class="section-kicker">09 / PERSONALIZATION</div>
-        <h2>Customizing the theme (EXPERIMENTAL! CAN BE BUGGY do NOT TRY IT.) </h2>
+      <section class="doc-section" id="themes" data-search="theme customize accent background panel separator window top image experimental buggy">
+        <div class="section-kicker">10 / PERSONALIZATION</div>
+        <h2>Customizing the theme (EXPERIMENTAL! CAN BE BUGGY do NOT TRY IT.)</h2>
         <p>Use the theme settings to personalize the editor's appearance. Available options can include accent, background, panel, separator, and title-bar colors, plus a background image.</p>
         <ol class="number-list">
-          <li>Open the theme settings in </li>
+          <li>Open the theme settings.</li>
           <li>Adjust the colors or background image.</li>
           <li>Apply the changes and check text contrast throughout the interface.</li>
         </ol>
       </section>
 
-      
-      <section class="doc-section" id="credits" data-search="credits name inspiration logo artist">
-        <div class="section-kicker">10 / CREDITS</div>
+      <section class="doc-section" id="credits" data-search="credits name inspiration logo artist Runic whackamole Alight Motion">
+        <div class="section-kicker">11 / CREDITS</div>
         <h2>The name & the logo</h2>
-
-        <p>
-          The name <strong>Alright Movement</strong> came from the
-          idiot RUNIC cause hes DIIOT and UDMB and FUCKUHWQHJGSFJAOIRJH jk love u runic
-          the name was supposed to be "PGUIE" (P's GUI Editor) but this is wayyy better thanks runic
-        </p>
-
+        <p>The name <strong>Alright Movement</strong> came from the idiot RUNIC cause hes DIIOT and UDMB and FUCKUHWQHJGSFJAOIRJH jk love u runic. The name was supposed to be "PGUIE" (P's GUI Editor) but this is wayyy better thanks runic.</p>
         <figure class="credit-figure">
-          <img
-            src="name-origin.png"
-            alt="Conversation where the Alright Movement name was discussed"
-            loading="lazy"
-          >
-          <figcaption>
-            <strong>Name inspiration</strong>
-            <span>we got it from Alight Motion lol thanks alight motion love yu</span>
-          </figcaption>
+          <img src="name-origin.png" alt="Conversation where the Alright Movement name was discussed" loading="lazy">
+          <figcaption><strong>Name inspiration</strong><span>we got it from Alight Motion lol thanks alight motion love yu</span></figcaption>
         </figure>
-
-        <p>
-          A special thank you to <strong>whackamole</strong> for creating
-          the logo!
-        </p>
-
+        <p>A special thank you to <strong>whackamole</strong> for creating the logo!</p>
         <figure class="credit-figure">
-          <img
-            src="logo-credit.png"
-            alt="Alright Movement logo artwork created by whackamole"
-            loading="lazy"
-          >
-          <figcaption>
-            <strong>Logo artwork by @whackamole30001 </strong>
-            <span>Thank you for making this logo for the project!</span>
-          </figcaption>
+          <img src="logo-credit.png" alt="Alright Movement logo artwork created by whackamole" loading="lazy">
+          <figcaption><strong>Logo artwork by @whackamole30001</strong><span>Thank you for making this logo for the project!</span></figcaption>
         </figure>
       </section>
 
-
       <section class="doc-section" id="troubleshooting" data-search="troubleshooting animation not playing keyframes audio events exported errors">
-        <div class="section-kicker">10 / HELP</div>
+        <div class="section-kicker">12 / HELP</div>
         <h2>Troubleshooting</h2>
+        <details><summary>It says to select a ScreenGui in StarterGui</summary><p>Select the ScreenGui in Studio's Explorer first, then try creating the project again.</p></details>
         <details><summary>The animation does not play</summary><p>Confirm that keyframes exist, the correct project is selected, and the playback position and duration are valid. Check the output for errors.</p></details>
         <details><summary>Keyframes behave unexpectedly</summary><p>Check the target track, keyframe positions, values, and easing settings. Preview the sequence after making changes.</p></details>
         <details><summary>Audio does not play</summary><p>Verify the asset ID, permissions, availability, and loading state. Test the audio independently if needed.</p></details>
@@ -229,6 +282,7 @@
 
       <section class="closing-card" id="features" data-search="features workflow keyframes preview audio events export">
         <div class="closing-sparkle">✦</div>
+        <h2>anyway good luck larping</h2>
         <a href="#top" class="back-top">Back to top ↑</a>
       </section>
 
