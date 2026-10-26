@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6d28d9">
+  <meta name="description" content="Alright Movement — documentation and guides for the Roblox animation editor plugin.">
+  <title>Alright Movement — Documentation</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="hero">
+    <a class="brand-mark" href="#top" aria-label="Alright Movement home">
+      <img src="assets/logo.svg" alt="Alright Movement logo" width="92" height="92">
+    </a>
+    <p class="eyebrow">ROBLOX ANIMATION WORKFLOW</p>
+    <h1 id="top">Alright <span>Movement</span></h1>
+    <p class="hero-copy">A practical guide to creating, previewing, and exporting animations.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#getting-started">Read the docs <span aria-hidden="true">↘</span></a>
+      <a class="button button-ghost" href="#features">Explore features</a>
+    </div>
+    <p class="disclaimer"><strong>Transparency note</strong> This website was built with AI assistance. The documentation and its wording were written by me.</p>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar" aria-label="Documentation navigation">
+      <div class="sidebar-heading">DOCUMENTATION</div>
+      <label class="search-wrap">
+        <span class="sr-only">Search documentation</span>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="doc-search" type="search" placeholder="Search the docs…" autocomplete="off">
+        <kbd>/</kbd>
+      </label>
+      <nav id="doc-nav">
+        <a class="nav-link active" href="#getting-started">Getting started</a>
+        <a class="nav-link" href="#interface">The interface</a>
+        <a class="nav-link" href="#keyframes">Keyframes & easing</a>
+        <a class="nav-link" href="#playback">Playback & preview</a>
+        <a class="nav-link" href="#onion-skin">Onion skin</a>
+        <a class="nav-link" href="#audio">Audio clips</a>
+        <a class="nav-link" href="#events">Animation events</a>
+        <a class="nav-link" href="#projects">Saving projects</a>
+        <a class="nav-link" href="#export">Exporting</a>
+        <a class="nav-link" href="#themes">Themes</a>
+        <a class="nav-link" href="#troubleshooting">Troubleshooting</a>
+      </nav>
+      <div class="sidebar-footer"><span class="status-dot"></span> Documentation edition <strong>2025</strong></div>
+    </aside>
+
+    <article class="docs">
+      <section class="intro-card" id="getting-started" data-search="getting started overview setup plugin animation">
+        <div class="intro-tag"><span class="sparkle">✦</span> THE USER GUIDE</div>
+        <h2>Make every frame count.</h2>
+        <p>Alright Movement is an animation editing workflow for building keyframe-based motion, previewing timing, and exporting playback code for your Roblox experience.</p>
+        <div class="quick-stats">
+          <div><span class="stat-icon">◈</span><span><strong>Keyframe-based</strong><small>Shape motion over time</small></span></div>
+          <div><span class="stat-icon">▷</span><span><strong>Preview first</strong><small>Check timing as you work</small></span></div>
+          <div><span class="stat-icon">⌘</span><span><strong>Export-ready</strong><small>Prepare runtime playback</small></span></div>
+        </div>
+      </section>
+
+      <section class="doc-section" id="interface" data-search="interface editor timeline tracks controls workspace">
+        <div class="section-kicker">01 / BASICS</div>
+        <h2>The interface</h2>
+        <p>The editor brings the animation timeline and its editing controls into one workspace. The timeline is where you organize tracks, place keyframes, and review how values change over time.</p>
+        <div class="callout"><span class="callout-icon">✦</span><p><strong>Tip</strong> Get comfortable with the timeline before building a long animation. A small, well-organized sequence is easier to revise.</p></div>
+      </section>
+
+      <section class="doc-section" id="keyframes" data-search="keyframes easing interpolation tracks values position rotation size">
+        <div class="section-kicker">02 / EDITING</div>
+        <h2>Keyframes & easing</h2>
+        <p>Keyframes define values at specific points in the animation. The playback system evaluates the values between keyframes to create motion.</p>
+        <ul class="feature-list">
+          <li><span class="list-check">✓</span><span><strong>Place keyframes intentionally</strong><small>Use them where a value or movement should change.</small></span></li>
+          <li><span class="list-check">✓</span><span><strong>Review timing</strong><small>Spacing between keyframes affects the pace of the animation.</small></span></li>
+          <li><span class="list-check">✓</span><span><strong>Choose easing deliberately</strong><small>Easing changes how motion accelerates or decelerates between points.</small></span></li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="playback" data-search="playback preview play pause stop loop duration fps frame rate">
+        <div class="section-kicker">03 / PREVIEW</div>
+        <h2>Playback & preview</h2>
+        <p>Preview your animation regularly instead of waiting until the timeline is complete. Check the start, middle, and end of the sequence for unexpected jumps or timing issues.</p>
+        <div class="mini-grid">
+          <div class="mini-card"><span class="mini-icon">▶</span><h3>Play</h3><p>Review the motion in sequence.</p></div>
+          <div class="mini-card"><span class="mini-icon">Ⅱ</span><h3>Pause</h3><p>Inspect a specific moment.</p></div>
+          <div class="mini-card"><span class="mini-icon">↻</span><h3>Loop</h3><p>Check transitions across the loop boundary.</p></div>
+        </div>
+        <p class="muted-note">Playback controls and exact behavior may depend on the version of the plugin you are using.</p>
+      </section>
+
+      <section class="doc-section" id="onion-skin" data-search="onion skin previous next frames ghost pose alignment">
+        <div class="section-kicker">04 / PRECISION</div>
+        <h2>Onion skin</h2>
+        <p>Onion skin helps you compare nearby poses by showing surrounding animation frames as visual references. Use it to judge spacing, direction, and consistency between poses.</p>
+        <ul>
+          <li>Use nearby frames as a guide while adjusting a pose.</li>
+          <li>Look for uneven spacing or sudden changes in direction.</li>
+          <li>Turn it off when the extra visual information makes the current pose harder to read.</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="audio" data-search="audio clips sound asset id local studio file sync timeline">
+        <div class="section-kicker">05 / SOUND</div>
+        <h2>Audio clips</h2>
+        <p>Audio clips can play alongside an animation. Add a supported audio asset, place it at the intended point in the timeline, and preview the sequence to check synchronization.</p>
+        <ol class="number-list">
+          <li>Add an audio asset using a supported Roblox audio asset ID or local Studio audio file.</li>
+          <li>Position the clip at the desired point in the animation.</li>
+          <li>Preview playback and adjust timing as needed.</li>
+        </ol>
+        <div class="callout warning"><span class="callout-icon">!</span><p><strong>Audio not playing?</strong> Check that the asset is available to the experience, permissions are correct, and the asset has finished loading. Local file references may be temporary.</p></div>
+      </section>
+
+      <section class="doc-section" id="events" data-search="animation events markers handlers register callback trigger">
+        <div class="section-kicker">06 / TIMELINE ACTIONS</div>
+        <h2>Animation events</h2>
+        <p>Animation events mark points in the timeline where runtime code can trigger a registered action.</p>
+        <ol class="number-list">
+          <li>Add an event marker and place it at the intended time.</li>
+          <li>Set the event name expected by your runtime setup.</li>
+          <li>Register a handler for that event before playback reaches it.</li>
+          <li>Preview the animation and confirm the handler fires at the right time.</li>
+        </ol>
+        <div class="callout"><span class="callout-icon">ⓘ</span><p><strong>Remember</strong> An event marker does not execute arbitrary code by itself. The runtime must register a matching handler.</p></div>
+      </section>
+
+      <section class="doc-section" id="projects" data-search="save saving project storage duration frame rate fps loop tracks keyframes">
+        <div class="section-kicker">07 / PROJECTS</div>
+        <h2>Saving projects</h2>
+        <p>Save regularly to preserve your work and make it easier to return to an earlier version.</p>
+        <ul>
+          <li>Give each project a recognizable name.</li>
+          <li>Save after significant keyframe or timeline changes.</li>
+          <li>Reopen saved work when practical to verify the project is intact.</li>
+          <li>Keep separate versions before major revisions.</li>
+        </ul>
+        <p>Project data may include settings such as frame rate, duration, looping, tracks, and keyframes.</p>
+      </section>
+
+      <section class="doc-section" id="export" data-search="export runtime Luau module Start Pause Resume Stop loop fade event handlers">
+        <div class="section-kicker">08 / RUNTIME</div>
+        <h2>Exporting an animation</h2>
+        <p>Exporting generates Luau code intended to play the animation outside the editor.</p>
+        <ol class="number-list">
+          <li>Review the timeline, keyframes, duration, frame rate, and loop settings.</li>
+          <li>Use the export controls to generate the runtime module or script.</li>
+          <li>Place the generated code in an appropriate location for your experience.</li>
+          <li>Read the generated module's setup instructions and exact method signatures.</li>
+          <li>Test playback in a separate play session.</li>
+        </ol>
+        <div class="api-panel">
+          <div class="api-panel-head"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="api-title">Runtime controls</span></div>
+          <div class="api-items">
+            <span>Start playback</span><span>Pause / resume</span><span>Stop playback</span><span>Loop settings</span><span>Fade settings</span><span>Event handlers</span>
+          </div>
+        </div>
+        <div class="callout warning"><span class="callout-icon">!</span><p><strong>Do not guess method signatures.</strong> Use the generated module's actual API and initialization requirements. Keep editor-only code separate from runtime logic, and validate client input on the server whenever it affects authoritative gameplay state.</p></div>
+      </section>
+
+      <section class="doc-section" id="themes" data-search="theme customize accent background panel separator window top image">
+        <div class="section-kicker">09 / PERSONALIZATION</div>
+        <h2>Customizing the theme</h2>
+        <p>Use the theme settings to personalize the editor's appearance. Available options can include accent, background, panel, separator, and title-bar colors, plus a background image.</p>
+        <ol class="number-list">
+          <li>Open the theme settings.</li>
+          <li>Adjust the colors or background image.</li>
+          <li>Apply the changes and check text contrast throughout the interface.</li>
+        </ol>
+      </section>
+
+      <section class="doc-section" id="troubleshooting" data-search="troubleshooting animation not playing keyframes audio events exported errors">
+        <div class="section-kicker">10 / HELP</div>
+        <h2>Troubleshooting</h2>
+        <details><summary>The animation does not play</summary><p>Confirm that keyframes exist, the correct project is selected, and the playback position and duration are valid. Check the output for errors.</p></details>
+        <details><summary>Keyframes behave unexpectedly</summary><p>Check the target track, keyframe positions, values, and easing settings. Preview the sequence after making changes.</p></details>
+        <details><summary>Audio does not play</summary><p>Verify the asset ID, permissions, availability, and loading state. Test the audio independently if needed.</p></details>
+        <details><summary>Events do not trigger</summary><p>Check the marker's position and name, and ensure a matching handler is registered before playback reaches it.</p></details>
+        <details><summary>The exported animation fails</summary><p>Check the generated module's setup requirements, dependencies, and exact method signatures. Test in a clean play session and inspect runtime errors.</p></details>
+      </section>
+
+      <section class="closing-card" id="features" data-search="features workflow keyframes preview audio events export">
+        <div class="closing-sparkle">✦</div>
+        <h2>Your next great animation starts here.</h2>
+        <p>Build in small steps, preview often, and test the exported result in your experience.</p>
+        <a href="#top" class="back-top">Back to top ↑</a>
+      </section>
+
+      <footer class="site-footer">
+        <span>Alright Movement Documentation</span>
+        <span>Made with care · Website built with AI assistance</span>
+      </footer>
+      <p id="no-results" class="no-results" hidden>No matching sections found. Try another search term.</p>
+    </article>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
