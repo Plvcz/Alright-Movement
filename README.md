@@ -11,3 +11,5 @@ welcome to alright movement brah
 - Any bugs you encounter and any issues don't go to me.
 
 https://plvcz.github.io/Alright-Movement/
+
+LETS LARP!!!!!!!!!!!!!!!!
